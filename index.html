@@ -14,53 +14,66 @@
     <div class="fundo bg-dark">
         <div class="container">
             <h1 id="titulo" class="text-white">Cadastro de Clientes</h1>
-            <form>
 
+            <form>
                 <div class="form-row">
-                    <div class="form-group col-md-4">
-                        <label for="inputNome" class="text-white">Nome</label>
-                        <input type="name" class="form-control" id="inputNome" placeholder="Nome Sobrenome" required>
+                    <div class="form-group col-md-12">
+                        <label for="inputNome" class="text-white">Nome *</label>
+                        <input type="name" class="form-control" id="inputNome" required>
                     </div>
-                    <div class="form-group col-md-4">
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-3">
+                        <label for="InputRG" class="text-white">RG</label>
+                        <input type="name" class="form-control" id="InputRG">
+                    </div>
+                    <div class="form-group col-md-3">
                         <div class="form-group">
-                            <label for="inputCPF" class="text-white">CPF</label>
-                            <input type="text" class="form-control" id="inputCPF" placeholder="000.000.000-00"
-                                placeholder="XXX.XXX.XXX-XX" required onblur="validaCPF()">
+                            <div class="notificaCPF" id="cpfNotificacao">CPF inválido, tente novamente</div>
+                            <label for="inputCPF" class="text-white">CPF *</label>
+                            <input type="text" class="form-control" id="inputCPF" onblur="checarCPF()" required>
 
                         </div>
                     </div>
-                    <div class="form-group col-md-4">
-                        <label for="inputSexo" class="text-white">Sexo</label>
+                    <div class="form-group col-md-3">
+                        <label for="inputSexo" class="text-white">Sexo *</label>
                         <select class="form-control" id="inputSexo" required>
                             <option>Feminino</option>
                             <option>Masculino</option>
                             <option>Outre</option>
                         </select>
                     </div>
+                    <div class="form-group col-md-3">
+                        <label for="inputDataNasc" class="text-white">Data de Nascimento *</label>
+                        <input type="date" class="form-control" id="inputDataNasc" placeholder="DD/MM/AAAA" required>
+                    </div>
                 </div>
 
                 <!-- Informações de contato -->
-                <label for="inputTelefone" class="text-white">Telefone/Celular</label>
-                <input type="tel" class="form-control" id="inputTelefone" placeholder="(XX) XXXX-XXXX">
-
-
                 <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label for="inputEmail4" class="text-white">Email</label>
-                        <input type="email" class="form-control" id="inputEmail4" placeholder="Email" required>
+                    <div class="form-group col-md-3">
+                        <label for="inputTelefone" class="text-white">Telefone</label>
+                        <input type="tel" class="form-control" id="inputTelefone">
                     </div>
-                    <div class="form-group col-md-6">
+                    <div class="form-group col-md-3">
+                        <label for="inputTelefone2" class="text-white">Celular *</label>
+                        <input type="tel" class="form-control" id="inputTelefone2" required>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="inputEmail4" class="text-white">Email *</label>
+                        <input type="email" class="form-control" id="inputEmail4" required>
+                    </div>
+                    <div class="form-group col-md-3">
                         <label for="inputPassword4" class="text-white">Senha</label>
-                        <input type="password" class="form-control" id="inputPassword4" placeholder="Senha">
+                        <input type="password" class="form-control" id="inputPassword4">
                     </div>
                 </div>
 
                 <!-- Endereço -->
-
                 <div class="form-row">
                     <div class="form-group col-md-2">
                         <div class="form-group">
-                            <label for="inputCep" class="text-white">CEP</label>
+                            <label for="inputCep" class="text-white">CEP *</label>
                             <input type="text" class="form-control" id="inputCep" placeholder="00000-000"
                                 onblur="buscarEndereco()" required>
                         </div>
@@ -70,29 +83,27 @@
                         <div class="form-group">
                             <div class="form-group">
                                 <label for="InputEndereco" class="text-white">Endereço</label>
-                                <input type="text" class="form-control" id="InputEndereco" placeholder="Rua dos bobos">
+                                <input type="text" class="form-control" id="InputEndereco">
                             </div>
                         </div>
                     </div>
-
                     <div class="form-group col-md-1">
-                        <label for="inputNum" class="text-white">Número</label>
+                        <label for="inputNum" class="text-white">Número *</label>
                         <input type="text" class="form-control" id="inputNum" placeholder="1234" required>
                     </div>
-
                     <div class="form-group col-md-3">
                         <label for="inputBairro" class="text-white">Bairro</label>
-                        <input type="text" class="form-control" id="inputBairro" placeholder="Bairro">
+                        <input type="text" class="form-control" id="inputBairro" required>
                     </div>
                 </div>
                 <div class="form-row">
-                    <div class="form-group col-md-6">
+                    <div class="form-group col-md-5">
                         <label for="inputCidade" class="text-white">Cidade</label>
-                        <input type="text" class="form-control" id="inputCidade">
+                        <input type="text" class="form-control" id="inputCidade" required>
                     </div>
-                    <div class="form-group col-md-4">
+                    <div class="form-group col-md-3">
                         <label for="inputEstado" class="text-white">Estado</label>
-                        <select id="inputEstado" class="form-control">
+                        <select id="inputEstado" class="form-control" required>
                             <option value="">Escolha...</option>
                             <option value="AC">Acre</option>
                             <option value="AL">Alagoas</option>
@@ -123,12 +134,12 @@
                             <option value="TO">Tocantins</option>
                         </select>
                     </div>
-                    <div class="form-group col-md-2">
+                    <div class="form-group col-md-4">
                         <label for="inputCEP" class="text-white">Complemento</label>
-                        <input type="text" class="form-control" id="inputCEP">
+                        <input type="text" class="form-control" id="inputCEP" required>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary dark">Entrar</button>
+                <button type="submit" class="btn btn-primary">Cadastrar</button>
             </form>
         </div>
     </div>
