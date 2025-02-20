@@ -66,3 +66,24 @@ function checarCPF() {
         cpfNotificacao.style.display = "none"; // Esconde o popup
     }
 }
+
+
+// Limpar
+function limpar() {
+    document.getElementById('inputNome').value = ""
+    document.getElementById('InputRG').value = ""
+    document.getElementById('inputCPF').value = ""
+    document.getElementById('inputSexo').value = ""
+    document.getElementById('inputDataNasc').value = ""
+    document.getElementById('inputTelefone').value = ""
+    document.getElementById('inputTelefone2').value = ""
+    document.getElementById('inputEmail4').value = ""
+    document.getElementById('inputPassword4').value = ""
+    document.getElementById('inputCep').value = ""
+    document.getElementById('InputEndereco').value = ""
+    document.getElementById('inputNum').value = ""
+    document.getElementById('inputComplemento').value = ""
+    document.getElementById('inputBairro').value = ""
+    document.getElementById('inputCidade').value = ""
+    document.getElementById('inputEstado').value = ""
+}

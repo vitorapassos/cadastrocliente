@@ -90,14 +90,18 @@
                     </div>
                     <div class="form-group col-md-1">
                         <label for="inputNum" class="text-white">Número *</label>
-                        <input type="text" class="form-control" id="inputNum" placeholder="1234" required>
+                        <input type="text" class="form-control" id="inputNum" required>
                     </div>
                     <div class="form-group col-md-3">
-                        <label for="inputBairro" class="text-white">Bairro</label>
-                        <input type="text" class="form-control" id="inputBairro" required>
+                        <label for="inputComplemento" class="text-white">Complemento</label>
+                        <input type="text" class="form-control" id="inputComplemento">
                     </div>
                 </div>
                 <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="inputBairro" class="text-white">Bairro</label>
+                        <input type="text" class="form-control" id="inputBairro" required>
+                    </div>
                     <div class="form-group col-md-5">
                         <label for="inputCidade" class="text-white">Cidade</label>
                         <input type="text" class="form-control" id="inputCidade" required>
@@ -135,12 +139,9 @@
                             <option value="TO">Tocantins</option>
                         </select>
                     </div>
-                    <div class="form-group col-md-4">
-                        <label for="inputCEP" class="text-white">Complemento</label>
-                        <input type="text" class="form-control" id="inputCEP">
-                    </div>
                 </div>
                 <button type="submit" class="btn btn-primary">Cadastrar</button>
+                <button class="btn btn-primary-dark" onclick="limpar()">Limpar</button>
             </form>
         </div>
     </div>
